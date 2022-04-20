@@ -1,8 +1,14 @@
 const container = document.querySelector('#container');
-console.log(container);
-for (let i = 1; i <= 16; i++){
-  const newDiv = document.createElement('div');
-  newDiv.id = 'div' + i;
-  newDiv.className = 'sketchBox';
-  container.appendChild(newDiv);
-}
+
+function makeGrid(rows, cols){
+  container.style.setProperty('--grid-rows', rows);
+  container.style.setProperty('--grid-cols', cols);
+  for(c = 0; c < (rows * cols); c++){
+    let cell = document.createElement('div');
+    cell.setAttribute("id", `div${c}`);
+    container.appendChild(cell).className = 'grid-item';
+  };
+};
+
+
+makeGrid(16, 16);

@@ -1,0 +1,24 @@
+:root {
+    --grid-cols: 1;
+    --grid-rows: 1;
+}
+
+#container{
+    display: grid;
+    max-width: 960px;
+    min-width: 960px;
+    max-height: 960px;
+    min-height: 960px;
+    
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+
+}
+
+#container>div{
+    border: 1px solid black;
+}
+
+#container>div:hover{
+    background-color: black;
+}
