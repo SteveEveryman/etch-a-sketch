@@ -1,5 +1,6 @@
 const container = document.querySelector('#container');
 
+
 function makeGrid(rows, cols){
   container.style.setProperty('--grid-rows', rows);
   container.style.setProperty('--grid-cols', cols);
@@ -10,5 +11,11 @@ function makeGrid(rows, cols){
   };
 };
 
-
 makeGrid(16, 16);
+var cells = document.getElementsByClassName("grid-item")
+
+for (let i = 0; i < cells.length; i++){
+  cells[i].addEventListener('mouseover', () =>{
+    cells[i].classList.add('hover-cells');
+  });
+};
