@@ -8,17 +8,19 @@ function makeGrid(rows, cols){
     let cell = document.createElement('div');
     cell.setAttribute("id", `div${c}`);
     container.appendChild(cell).className = 'grid-item';
+    
+  };
+  var cells = document.getElementsByClassName("grid-item")
+  for (let i = 0; i < cells.length; i++){
+    cells[i].addEventListener('mouseover', () =>{
+      cells[i].classList.add('hover-cells');
+    });
   };
 };
 
 makeGrid(16, 16);
-var cells = document.getElementsByClassName("grid-item")
 
-for (let i = 0; i < cells.length; i++){
-  cells[i].addEventListener('mouseover', () =>{
-    cells[i].classList.add('hover-cells');
-  });
-};
+
 
 button.addEventListener('click', graphReset);
 
