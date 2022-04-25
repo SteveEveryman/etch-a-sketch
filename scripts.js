@@ -20,9 +20,12 @@ for (let i = 0; i < cells.length; i++){
   });
 };
 
-button.addEventListener('click', graphReset());
+button.addEventListener('click', graphReset);
 
 function graphReset(){
+  while (container.firstChild) {
+    container.removeChild(container.lastChild);
+  }
   let gridNumber = prompt("Please enter the number of rows and columns", 16);
   if (gridNumber > 100){
     alert("Please try again.");
