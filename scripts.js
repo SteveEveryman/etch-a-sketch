@@ -1,5 +1,5 @@
 const container = document.querySelector('#container');
-
+const button = document.querySelector('#button');
 
 function makeGrid(rows, cols){
   container.style.setProperty('--grid-rows', rows);
@@ -19,3 +19,16 @@ for (let i = 0; i < cells.length; i++){
     cells[i].classList.add('hover-cells');
   });
 };
+
+button.addEventListener('click', graphReset());
+
+function graphReset(){
+  let gridNumber = prompt("Please enter the number of rows and columns", 16);
+  if (gridNumber > 100){
+    alert("Please try again.");
+    graphReset();
+  }
+  else{
+    makeGrid(gridNumber , gridNumber);
+  }
+}
